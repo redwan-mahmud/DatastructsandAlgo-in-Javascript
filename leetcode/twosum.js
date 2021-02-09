@@ -34,5 +34,28 @@ var twoSum = function (nums, target) {
   }
 };
 
-console.log(twoSum([3, 1, 2], 4)); // [1, 3]
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+// most efficient 
+var twoSum2 = function(nums, target) {
+  let map = new Map();
+  
+  console.log(map)
+   for(let i = 0; i < nums.length; i++){
+      let comp = target - nums[i]
+      if(map.has(comp) && map.get(comp)!= i){
+          return([i,map.get(comp)])
+      }
+      map.set(nums[i], i);
+  }
+  
+  
+};
+
+console.log(twoSum2([3,2,4],
+  6)); // [1, 3]
 //console.log(twoSum([3, 9, 12, 20], 21)); // [9, 12]
